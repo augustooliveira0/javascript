@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Número comJS</title>
+</head>
+<body>
+    <h1>Trabalhando com números</h1>
+
+    <button onclick="inicio()">Clique para calcular</button>
+
+    <div id="calculos">
+        <p>O resultado vem aqui...</p>
+    </div>
+
+    <script>
+        function inicio(){
+            let num1= prompt('Digite um número:')
+            let dob= num1 * 2
+            let met= num1 / 2
+            let calc= document.getElementById('calculos')
+            calc.innerHTML= `<p> O dobro de ${num1} é ${dob} e a metade é ${met}!`
+        }
+    </script>
+</body>
+</html>
