@@ -5,15 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Números com JS</title>
+    <title>Contador de cliques</title>
 </head>
 <body>
-    <h1>Somando dois números</h1>
+    <h1>Contador de cliques</h1>
 
-    <button onclick="inicio()">Iniciar a soma</button>
+    <button onclick="inicio()">Clique em mim</button>
+    <button onclick="zera()">Zerar o contador</button>
 
-    <div id="soma">
-        <p>O resultado vem aqui...</p>
+    <div id="resultado">
+        <p>O contador está com <mark>0</mark> cliques.</p>
     </div>
+
+    <script>
+        let cont= Number(0)
+        function inicio(){
+            cont+= 1
+            let res= document.getElementById('resultado')
+            res.innerHTML= `<p>O contador está com <mark>${cont}</mark> cliques.`
+        }
+        function zera(){
+            cont= Number(0)
+            let res= document.getElementById('resultado')
+            res.innerHTML= `<p>O contador está com <mark>${cont}</mark> cliques.`
+        }
+    </script>
 </body>
 </html>
