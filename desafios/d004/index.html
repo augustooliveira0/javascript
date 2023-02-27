@@ -5,24 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Número comJS</title>
+    <title>Calcula Troco</title>
 </head>
 <body>
-    <h1>Trabalhando com números</h1>
+    <h1>Calculando o Troco</h1>
 
-    <button onclick="inicio()">Clique para calcular</button>
-
-    <div id="calculos">
-        <p>O resultado vem aqui...</p>
-    </div>
+    <button onclick="inicio()">Comprar produto</button>
 
     <script>
         function inicio(){
-            let num1= prompt('Digite um número:')
-            let dob= num1 * 2
-            let met= num1 / 2
-            let calc= document.getElementById('calculos')
-            calc.innerHTML= `<p> O dobro de ${num1} é ${dob} e a metade é ${met}!`
+            let produto= prompt('Qual o produto você está comprando?')
+            let preco= Number(prompt(`Quanto custa esse ${produto} que você está comprando?`))
+            let dinheiro= Number(prompt(`Qual foi o valor que você deu para pagar esse ${produto}?`))
+            alert(`Você comprou ${produto} que custou R$ ${preco}.
+Deu R$ ${dinheiro} em dinheiro e vai receber R$ ${dinheiro-preco} de troco.
+Volte Sempre!`)
         }
     </script>
 </body>
