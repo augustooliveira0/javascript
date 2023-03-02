@@ -23,8 +23,8 @@
             let fahr= Number((temp*9/5)+32)
             let res= document.getElementById('resultado')
             res.innerHTML= `<h2>A temperatura de ${temp}°C, corresponde a...`
-            res.innerHTML+= `<p>${kelv}°K (Kelvin)`
-            res.innerHTML+= `<p>${fahr}°F (Fahrenheit)`
+            res.innerHTML+= `<p>${kelv.toFixed(2)}°K (Kelvin)`
+            res.innerHTML+= `<p>${fahr.toFixed(2)}°F (Fahrenheit)`
         }
     </script>
 </body>

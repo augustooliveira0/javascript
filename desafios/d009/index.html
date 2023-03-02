@@ -5,24 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Número comJS</title>
+    <title>Reajustar salário</title>
 </head>
 <body>
-    <h1>Trabalhando com números</h1>
+    <h1>Reajuste salarial</h1>
 
-    <button onclick="inicio()">Clique para calcular</button>
+    <button onclick="inicio()">Reajustar salário</button>
 
-    <div id="calculos">
-        <p>O resultado vem aqui...</p>
+    <div id="resultado">
+        <p>Clique no botão acima para iniciar.</p>
     </div>
 
     <script>
         function inicio(){
-            let num1= prompt('Digite um número:')
-            let dob= num1 * 2
-            let met= num1 / 2
-            let calc= document.getElementById('calculos')
-            calc.innerHTML= `<p> O dobro de ${num1} é ${dob} e a metade é ${met}!`
+            let nome= prompt('Qual é o nome do funcionário?')
+            let salario= Number(prompt(`Qual o salário de ${nome}?`))
+            let porc= Number(prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`))
+            let res= document.getElementById('resultado')
+            res.innerHTML= `<h2>${nome} recebeu um aumento salarial!`
+            res.innerHTML+= `<p>O salário atual era ${salario.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`
+            res.innerHTML+= `<p>Com um aumento de ${porc}%, o salário vai aumentar ${((porc/100)*salario).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} no próximo mês.`
+            res.innerHTML+= `<p>E a partir daí, Pedro Paulo vai passar a ganhar ${((porc/100)*salario+salario).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.`
         }
     </script>
 </body>

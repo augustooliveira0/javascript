@@ -5,24 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Número comJS</title>
+    <title>Conversor R$ -> US$</title>
 </head>
 <body>
-    <h1>Trabalhando com números</h1>
+    <h1>Conversor R$ -> US$</h1>
 
-    <button onclick="inicio()">Clique para calcular</button>
+    <button onclick="inicio()">Converter</button>
 
-    <div id="calculos">
-        <p>O resultado vem aqui...</p>
+    <div id="resultado">
+        <p>Clique no botão acima para iniciar.</p>
     </div>
 
     <script>
         function inicio(){
-            let num1= prompt('Digite um número:')
-            let dob= num1 * 2
-            let met= num1 / 2
-            let calc= document.getElementById('calculos')
-            calc.innerHTML= `<p> O dobro de ${num1} é ${dob} e a metade é ${met}!`
+            let cota= Number(prompt('Antes de mais nada. Quanto está a cotação do dólar agora?'))
+            let real= Number(prompt('Quantos R$ você tem na carteira?'))
+            let dolar= Number(real/cota)
+            let res= document.getElementById('resultado')
+            res.innerHTML= `<p>Você consegue comprar ${dolar.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})} dólares.`
         }
     </script>
 </body>
